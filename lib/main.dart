@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/shared/size_fit.dart';
+import 'extension/double_extension.dart';
+import 'extension/int_extension.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,10 +9,10 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SizeFit.initialize();
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -27,7 +30,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Demo Home Page')),
-      body: Container(),
+      body: Center(
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          height: 200.0.px,
+          width: 200.px,
+        ),
+      ),
     );
   }
 }
